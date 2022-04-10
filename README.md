@@ -53,8 +53,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * [AngulerCLI]
 * [Bootstrap](https://github.com/topics/bootstrap)
 
-## Known Bugs
-* highlight directive property does not work properly
 
 ## License
 * *MIT License:*

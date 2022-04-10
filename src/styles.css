@@ -113,13 +113,10 @@ h1 {
     color: black;
   }
 
-  form {
-    max-width: 50px;
-    margin: 0 auto;
-
-  }
-  
-  
+    .card-body p {
+        font-size: 1.2em;
+        color: #000;
+    }
   footer {
     text-align: center;
     background-color: black;
@@ -132,10 +129,15 @@ h1 {
   }
 
   form {
-    max-width: 50px;
-    margin: 0 auto;
-    
-      margin-left: 30%;
+      border: 1px solid #000;
+      opacity: 0.8;
+        padding: 1em;
+        color: #000;
+        border-radius: 10px;
+        background-color: rgb(104, 111, 147);
+        width: 30pc;
+        margin: 0 auto;
+        text-align: center;
   }
     .form-control {
         width: 300px;
