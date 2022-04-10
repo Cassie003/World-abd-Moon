@@ -7,7 +7,7 @@ import { QuoteComponent } from './quote/quote.component';
 import { QuotesComponent } from './quote/quotes/quotes.component';
 import { FormsModule } from '@angular/forms';
 import { QuotesFormComponent } from './quote/quotes-form/quotes-form.component';
-import { DayCountPipe } from './pipe/day-count.pipe';
+import { DayCountPipe } from './pipe';
 
 @NgModule({
   declarations: [
