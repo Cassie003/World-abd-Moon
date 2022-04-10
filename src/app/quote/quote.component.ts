@@ -54,7 +54,7 @@ export class QuoteComponent implements OnInit {
    ];
 
   constructor() { 
-    console.log(this.quotes);
+    
   }
 
   ngOnInit(): void {}
@@ -90,7 +90,7 @@ export class QuoteComponent implements OnInit {
     if (upVoteQuoteEvent) {
       this.quotes[index].likes++;
     }
-    console.log(this.getQuoteWithHighestLikesAndDislikes());
+    
   }
 
   downVoteQuote(downVoteQuoteEvent, index) {
