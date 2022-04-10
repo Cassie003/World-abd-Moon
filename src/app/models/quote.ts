@@ -1,6 +1,7 @@
 export class Quote {
   viewQuoteDetails: boolean;
   randomId = Math.floor(Math.random() * 100);
+  viewQuotes: boolean;
   constructor(
     public id: number,
     public author: string,
