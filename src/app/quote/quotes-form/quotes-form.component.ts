@@ -1,5 +1,11 @@
 import { NgForm } from '@angular/forms';
-import {Component,EventEmitter,OnInit,Output,ViewChild,} from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  OnInit,
+  Output,
+  ViewChild,
+} from '@angular/core';
 import { Quote } from 'src/app/models/quote';
 
 @Component({
@@ -8,8 +14,7 @@ import { Quote } from 'src/app/models/quote';
   styleUrls: ['./quotes-form.component.css'],
 })
 export class QuoteFormComponent implements OnInit {
-  @ViewChild('f')
-  quotesForm!: NgForm;
+  @ViewChild('f') quotesForm: NgForm;
   newQuote = new Quote(0, '', '', '', new Date());
   @Output() addQuote = new EventEmitter<Quote>();
   displaySuccessMessage = false;
@@ -17,7 +22,7 @@ export class QuoteFormComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onSubmit(): void  {
+  onSubmit() {
     this.displaySuccessMessage = true;
     this.newQuote.author = this.quotesForm.value.author;
     this.newQuote.quoteDescription = this.quotesForm.value.quoteDescription;

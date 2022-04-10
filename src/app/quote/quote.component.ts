@@ -64,7 +64,7 @@ export class QuoteComponent implements OnInit {
     ? (this.createQuoteForm = false)
     : (this.createQuoteForm = true);
   }
-  createNewQuote(quote): void  {
+  createNewQuote(quote: { author: string; createdBy: string; quoteDescription: string; }): void  {
     let quoteId = Math.floor(Math.random()* 100)
     this.quotes.push(
       new Quote(
