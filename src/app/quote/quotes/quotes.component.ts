@@ -18,17 +18,17 @@ export class QuotesComponent implements OnInit {
   }
 
   // emit an event to the parent component to delete the quote
-  deleteQuote(quote: Quote) {
+  deleteQuote(quote: Quote): void  {
     this.deleteQuoteEvent.emit(quote);
   }
 
   // emit an event to the parent component to upvote the quote
-  upVoteQuote(quote: Quote) {
+  upVoteQuote(quote: Quote): void  {
     this.upVoteQuoteEvent.emit(quote);
   }
 
   // emit an event to the parent component to downvote the quote
-  downVoteQuote(quote: Quote) {
+  downVoteQuote(quote: Quote): void  {
     this.downVoteEvent.emit(quote);
   }
 
