@@ -8,7 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class QuotesComponent implements OnInit {
 
-  @Input() quote: Quote;
+  @Input() quote: Quote | undefined;
   @Output() deleteQuoteEvent = new EventEmitter<Quote>();
   @Output() upVoteQuoteEvent = new EventEmitter<Quote>();
   @Output() downVoteEvent = new EventEmitter<Quote>();
