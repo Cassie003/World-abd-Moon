@@ -2,9 +2,9 @@ import { Quote } from '../../models/quote';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-quote-details',
-  templateUrl: './quote-details.component.html',
-  styleUrls: ['./quote-details.component.css']
+  selector: 'app-quote-detail',
+  templateUrl: './quote-detail.component.html',
+  styleUrls: ['./quote-detail.component.css']
 })
 export class QuotesComponent implements OnInit {
 

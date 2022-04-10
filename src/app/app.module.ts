@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { QuoteComponent } from './quote/quote.component';
-import { QuoteDetailsComponent } from './quote/quote-details/quote-details.component';
+import { QuoteDetailComponent} from './quote/quote-detail/quote-detail.component';
 import { FormsModule } from '@angular/forms';
 import { QuoteFormComponent } from './quote/quote-form/quote-form.component';
 import { DayCountPipe } from './pipes/day-count.pipe';
@@ -13,7 +13,7 @@ import { DayCountPipe } from './pipes/day-count.pipe';
   declarations: [
     AppComponent,
     QuoteComponent,
-    QuoteDetailsComponent,
+    QuoteDetailComponent,
     QuoteFormComponent,
     DayCountPipe,
   ],
