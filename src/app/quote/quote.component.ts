@@ -53,19 +53,22 @@ export class QuoteComponent implements OnInit {
       ),
    ];
 
-  constructor() { 
-    
+  constructor() {
+    console.log(this.quotes);
   }
 
   ngOnInit(): void {}
 
-  displayCreateQuoteForm(): void  {
+  // to show or hide create quote form
+  displayCreateQuoteForm() {
     this.createQuoteForm === true
-    ? (this.createQuoteForm = false)
-    : (this.createQuoteForm = true);
+      ? (this.createQuoteForm = false)
+      : (this.createQuoteForm = true);
   }
-  createNewQuote(quote: { author: string; createdBy: string; quoteDescription: string; }): void  {
-    let quoteId = Math.floor(Math.random()* 100)
+
+  // add quote
+  createNewQuote(quote: { author: string; createdBy: string; quoteDescription: string; }) {
+    let quoteId = Math.floor(Math.random() * 100);
     this.quotes.push(
       new Quote(
         quoteId,
@@ -76,29 +79,35 @@ export class QuoteComponent implements OnInit {
       )
     );
   }
-  viewDetails(index): void  {
-    this.quotes[index].viewQuotes = !this.quotes[index].viewQuotes;
+
+  // view quote details
+  viewDetails(index) {
+    this.quotes[index].viewQuoteDetails = !this.quotes[index].viewQuoteDetails;
   }
 
-  deleteTheQuote(deleteQuoteEvent, index): void  {
+  // delete a quote
+  deleteTheQuote(deleteQuoteEvent, index) {
     if (deleteQuoteEvent) {
       this.quotes.splice(index, 1);
     }
   }
 
-  upVoteQuote(upVoteQuoteEvent, index): void  {
+  // upvote a quote
+  upVoteQuote(upVoteQuoteEvent, index) {
     if (upVoteQuoteEvent) {
       this.quotes[index].likes++;
     }
-    
+    console.log(this.getQuoteWithHighestLikesAndDislikes());
   }
 
-  downVoteQuote(downVoteQuoteEvent, index): void  {
+  // downvote a quote
+  downVoteQuote(downVoteQuoteEvent, index) {
     if (downVoteQuoteEvent) {
       this.quotes[index].dislikes++;
     }
   }
 
+  // getting the quote with the highest likes from the array
   getQuoteWithHighestLikes() {
     let quoteWithHighestLikes = this.quotes[0];
     for (let i = 0; i < this.quotes.length; i++) {
@@ -109,6 +118,7 @@ export class QuoteComponent implements OnInit {
     return quoteWithHighestLikes;
   }
 
+  // get the quote with the highest number of likes and dislikes
   getQuoteWithHighestLikesAndDislikes() {
     let quoteWithHighestLikesAndDislikes = this.quotes[0];
     for (let i = 0; i < this.quotes.length; i++) {
@@ -122,5 +132,4 @@ export class QuoteComponent implements OnInit {
     }
     return quoteWithHighestLikesAndDislikes;
   }
-
 }

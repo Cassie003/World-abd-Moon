@@ -1,31 +1,33 @@
 <div class="quotes mt-5 mb-5" id="quotes">
-    <div class="text-center ">
-      <h1 class="color-primary text-uppercase">Wold and moon</h1>
-      <a class="btn bg-yellow mt-2 text-center" data-toggle="modal" data-target="#createQuote"
-        (click)="displayCreateQuoteForm()">Create Quote
-        <i class="fa fa-plus"></i>
-      </a>
-    </div>
-    <div class="container mt-4" *ngIf="createQuoteForm">
-      <app-quotes-form (addQuote)="createNewQuote($event)"></app-quotes-form>
-    </div>
-    <div class="row">
-  
-      <div *ngFor="let quote of quotes; let i = index" class="col-md-4 col-sm-6">
-        <div class="card mt-5">
-          <div class="text-center">
-            <div class="icon">
-              <i class="fa fa-quote-right"></i>
-            </div>
-            <div class="card-body">
-              <h3 ><q>{{ quote.quoteDescription }}</q></h3>
-              <p class="card-text"><a (click)="viewDetails(i)">Learn More <i class="fa fa-chevron-right "></i></a></p>
-            </div>
-            <app-quotes [quote]="quote" *ngIf="quote.viewQuotes" (deleteQuoteEvent)='deleteTheQuote($event,i)'
-              (upVoteQuoteEvent)="upVoteQuote($event,i)" (downVoteEvent)="downVoteQuote($event,i)"></app-quotes>
+  <div class="text-center ">
+    <h1 class="color-primary text-uppercase">Wold and Moon</h1>
+    <a class="btn bg-yellow mt-2 text-center" data-toggle="modal" data-target="#createQuote"
+      (click)="displayCreateQuoteForm()">Create Quote
+      <i class="fa fa-plus"></i>
+    </a>
+  </div>
+  <div class="container mt-4" *ngIf="createQuoteForm">
+    <app-quote-form (addQuote)="createNewQuote($event)"></app-quote-form>
+  </div>
+  <div class="row">
+
+    <div *ngFor="let quote of quotes; let i = index" class="col-md-4 col-sm-6">
+      <!-- appHighlightQuote -->
+      <div class="card mt-5">
+        <div class="text-center">
+          <div class="icon">
+            <i class="fa fa-quote-right"></i>
           </div>
+          <div class="card-body">
+            <h3 ><q>{{ quote.quoteDescription }}</q></h3>
+            <p class="card-text"><a (click)="viewDetails(i)">Learn More <i class="fa fa-chevron-right "></i></a></p>
+          </div>
+          <!-- quote details -->
+          <app-quote-detail [quote]="quote" *ngIf="quote.viewQuoteDetails" (deleteQuoteEvent)='deleteTheQuote($event,i)'
+            (upVoteQuoteEvent)="upVoteQuote($event,i)" (downVoteEvent)="downVoteQuote($event,i)"></app-quote-detail>
         </div>
       </div>
-      <h3 *ngIf="quotes.length < 1" class="text-danger text-center">No quotes available</h3>
     </div>
+    <h3 *ngIf="quotes.length < 1" class="text-danger text-center">No quotes available!!</h3>
   </div>
+</div>
