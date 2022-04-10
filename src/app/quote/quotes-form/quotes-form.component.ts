@@ -17,7 +17,7 @@ export class QuoteFormComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onSubmit() {
+  onSubmit(): void  {
     this.displaySuccessMessage = true;
     this.newQuote.author = this.quotesForm.value.author;
     this.newQuote.quoteDescription = this.quotesForm.value.quoteDescription;

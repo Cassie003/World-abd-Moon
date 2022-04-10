@@ -54,17 +54,17 @@ export class QuoteComponent implements OnInit {
    ];
 
   constructor() { 
-    console.log(this.quotes);
+    
   }
 
   ngOnInit(): void {}
 
-  displayCreateQuoteForm() {
+  displayCreateQuoteForm(): void  {
     this.createQuoteForm === true
     ? (this.createQuoteForm = false)
     : (this.createQuoteForm = true);
   }
-  createNewQuote(quote) {
+  createNewQuote(quote): void  {
     let quoteId = Math.floor(Math.random()* 100)
     this.quotes.push(
       new Quote(
@@ -76,24 +76,24 @@ export class QuoteComponent implements OnInit {
       )
     );
   }
-  viewDetails(index) {
+  viewDetails(index): void  {
     this.quotes[index].viewQuotes = !this.quotes[index].viewQuotes;
   }
 
-  deleteTheQuote(deleteQuoteEvent, index) {
+  deleteTheQuote(deleteQuoteEvent, index): void  {
     if (deleteQuoteEvent) {
       this.quotes.splice(index, 1);
     }
   }
 
-  upVoteQuote(upVoteQuoteEvent, index) {
+  upVoteQuote(upVoteQuoteEvent, index): void  {
     if (upVoteQuoteEvent) {
       this.quotes[index].likes++;
     }
-    console.log(this.getQuoteWithHighestLikesAndDislikes());
+    
   }
 
-  downVoteQuote(downVoteQuoteEvent, index) {
+  downVoteQuote(downVoteQuoteEvent, index): void  {
     if (downVoteQuoteEvent) {
       this.quotes[index].dislikes++;
     }
