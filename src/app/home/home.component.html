@@ -3,31 +3,25 @@
         <a href="#" class="logo">WoldandMoon</a>
         <nav>
             <ul>
-                <li><a href="#" routerLink="/">Home</a></li>
-                <li><a href="#" routerLink="/quotes">Quotes</a></li>
+                <li class="first"><a href="#" routerLink="/">Home</a></li>
+                <li class="second"><a href="#" routerLink="/quotes">Quotes</a></li>
             </ul>
         </nav>
     </div>
 </header>
 <div class="jumbotron">
-    <h1>Artist Quotes</h1>
+    <h1>Wold And Moon</h1>
     <p>Generate quotes with WoldandMoon.</p>
     <div class="container">
         <div class="row" >
-           
             <div class="col-md-4" *ngFor='let quote of quotes; let i=index'>
-                <div class="card text-center">
-                    
-                        <img src='assets/art.jpg'  height="250"/>
-                    
+                <div class="card">
+                        <img src='assets/art.jpg'  height="220"/>
                     <div class="card-body">
-                        
-                        <h6 class="card-title">{{quote.musician}} <br><br> </h6>
-                        
-                        <button type="button" class="btn btn-dark" (click)='toggleDetails(i)' >See More</button><br><br>
+                        <h6 class="card-title">{{quote.author}} <br><br> </h6>
+                        <button type="button" class="btn btn-primary" (click)='toggleDetails(i)' >See More</button><br><br>
                         <div class="icon">
                             <app-quote-detail [quotes]='quote' *ngIf='quote.showQuote' (isComplete)='completeQuote($event,i)'></app-quote-detail>
-                            
                         </div>
                     </div>
                 </div>

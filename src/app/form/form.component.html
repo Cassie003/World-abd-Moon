@@ -19,9 +19,9 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="exampleFormControlInput1">Musician</label>
-            <input #musician="ngModel" [(ngModel)]="newQuote.musician" name="musician" type="text" class="form-control" id="name" placeholder="musician" required>
-            <div [hidden]="musician.valid || musician.pristine" class="alert alert-danger">
+            <label for="exampleFormControlInput1">author</label>
+            <input #author="ngModel" [(ngModel)]="newQuote.author" name="author" type="text" class="form-control" id="name" placeholder="author" required>
+            <div [hidden]="author.valid || author.pristine" class="alert alert-danger">
                 <p>
                     This field is empty!
                 </p>

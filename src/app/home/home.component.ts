@@ -1,4 +1,4 @@
-// import { Quotes } from './../quotes';
+// Home component created to refer  to quotes
 import { Component, OnInit } from '@angular/core';
 import { Quotes } from '../quotes';
 
